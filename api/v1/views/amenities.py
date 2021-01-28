@@ -9,7 +9,8 @@ from models.amenity import Amenity
 from models import storage
 
 
-@app_views.route('/amenities', strict_slashes=False)
+@app_views.route('/amenities', methods=['GET'],
+                 strict_slashes=False)
 def amenities():
     """
     Return all amenities
@@ -22,7 +23,8 @@ def amenities():
     return jsonify(amenities)
 
 
-@app_views.route('/amenities/<amenity_id>', strict_slashes=False)
+@app_views.route('/amenities/<amenity_id>', methods=['GET'],
+                 strict_slashes=False)
 def list_amenities(amenity_id):
     """
     Retrieves a amenity object
