@@ -9,7 +9,7 @@ from models.user import User
 from models import storage
 
 
-@app_views.route('/users', methods=['GET'], strict_slashes=False)
+@app_views.route('/users', strict_slashes=False)
 def users():
     """
     Return all users
@@ -20,10 +20,10 @@ def users():
     return jsonify(users)
 
 
-@app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
+@app_views.route('/users/<user_id>', strict_slashes=False)
 def list_users(user_id):
     """
-    Retrieves a user object
+        Retrieves a user object
     """
     user = storage.get('User', user_id)
     if user is None:
@@ -37,7 +37,7 @@ def list_users(user_id):
                  strict_slashes=False)
 def delete_user(user_id):
     """
-    deletes a user object
+        deletes a user object
     """
     user = storage.get('User', user_id)
     if user is None:
@@ -53,7 +53,7 @@ def delete_user(user_id):
                  strict_slashes=False)
 def post_user():
     """
-    post a user object
+        post a user object
     """
     if not request.json:
         abort(400, "Not a JSON")
@@ -74,7 +74,7 @@ def post_user():
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
 def update_user(user_id):
     """
-    update a user object
+        update a user object
     """
     user = storage.get('User', user_id)
     if user is None:
