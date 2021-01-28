@@ -20,10 +20,10 @@ def api_stats():
     """
     endpoint
     """
-   objects = {"amenities": storage.count("Amenity"),
-               "cities": storage.count("City"),
-               "places": storage.count("Place"),
-               "reviews": storage.count("Review"),
-               "states": storage.count("State"),
-               "users": storage.count("User")}
-    return jsonify(objects)
+    num_objects = {"amenities": storage.count("Amenity"),
+                   "cities": storage.count("City"),
+                   "places": storage.count("Place"),
+                   "reviews": storage.count("Review"),
+                   "states": storage.count("State"),
+                   "users": storage.count("User")}
+    return jsonify(num_objects)
