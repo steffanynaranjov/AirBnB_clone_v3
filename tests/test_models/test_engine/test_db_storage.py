@@ -87,22 +87,21 @@ class TestFileStorage(unittest.TestCase):
     def test_save(self):
         """Test that save properly saves objects to file.json"""
 
-    def test_file_get(self):
-        """Test for the get method file_sorage"""
-        try:
-            first_state_id = list(storage.all('State').values())[0].id
-            state = storage.get('State', first_state_id)
-            self.assertEqual(state.id, first_state_id)
-            self.assertIsInstance(state, State)
-        except IndexError:
-            pass
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+    def test_get(self):
+        """get method test """
+        new_state = State(name='STATE')
+        models.storage.new(new_state)
+        models.storage.save()
+        get = models.storage.get(State, new_state.id)
+        self.assertTrue(get)
 
-    def test_file_count(self):
-        """Test for the count method file_sorage"""
-        try:
-            count = storage.count('State')
-
-            self.assertIsInstance(count, int)
-            self.assertIsNot(count, None)
-        except IndexError:
-            pass
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+    def test_count(self):
+        """count method test"""
+        count = models.storage.count()
+        new_state = State(name='STATE2')
+        models.storage.new(new_state)
+        models.storage.save()
+        new_count = models.storage.count()
+        self.assertNotEqual(count, new_count)
