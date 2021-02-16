@@ -158,6 +158,7 @@ Steffany Naranjo - [Github](https://github.com/steffanynaranjov) / [Twitter] (ht
 Jose Espinosa - [Github](https://github.com/joer9514) / [Twitter](https://twiter.com/joer9514)
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+Jorge Ramirez - [Github](https://github.com/gorgyboy) / [Twitter] (https://twitter.com/jlrogb)
 
 Second part of Airbnb: Joann Vuong
 ## License
